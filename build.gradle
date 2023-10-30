@@ -30,7 +30,6 @@ dependencies {
     implementation 'io.cucumber:cucumber-java:7.14.0'
     // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit-platform-engine
     testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.14.0'
-
 }
 
 test {
@@ -42,6 +41,7 @@ configurations {
         extendsFrom testImplementation
     }
 }
+
 task cucumber() {
     dependsOn assemble, testClasses
     doLast {
@@ -52,7 +52,7 @@ task cucumber() {
                     '--plugin', 'pretty',
                     '--plugin', 'html:target/cucumber-report.html',
                     '--glue', 'runner',
-                    'src/test/resources/features']
+                    'src/test/resources']
         }
     }
 }

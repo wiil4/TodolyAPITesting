@@ -76,10 +76,4 @@ public class UserCrudTest {
                 .encodeToString((email + ":" + password).getBytes());
     }
 
-    private String replaceValues(String value){
-        for (String key:variables.keySet() ) {
-            value=value.replace(key,variables.get(key));
-        }
-        return value;
-    }
 }
